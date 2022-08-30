@@ -1,0 +1,31 @@
+the way upload an unity project on your git hub
+1) download git lfs
+
+$ git lfs install
+// psd 확장자를 가진 파일들을 LFS로 관리
+$ git lfs track "*.psd"
+
+// 특정 파일을 LFS로 관리
+$ git lfs track "images/MainLogo.psd"
+$ git add .gitattributes
+
+2) add a gitignore for unity
+1) git add .
+2) git commit -m "Apply .gitignore"
+3) git push
+
+3) add your existing files or folder
+$ git remote add origin [깃헙 repository주소]
+$ git status
+$ git add .
+$ git commit -m "커밋 로그"
+$ git remote -v
+$ git push origin master(main)
+
+possible errors 
+[warning: CRLF will be replaced by LF in some/file.file.
+The file will have its original line endings in your working directory.]
+git config --global core.autocrlf true
+
+[Filename too long]
+git config --system core.longpaths true
